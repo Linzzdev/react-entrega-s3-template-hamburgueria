@@ -1,0 +1,29 @@
+.divContainer{
+    width: 30.25rem;
+    height: 25.5rem;
+    position: fixed;
+    top: 265px;
+    left: 700px;
+    & > .div1{
+        display: flex;
+        flex-direction: row;
+        width: 30.25rem;
+        justify-content: space-around;
+        height: 3.563rem;
+        background-color: #27AE60;
+        border-radius: 8px 8px 0px 0px;
+        & > h2{
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 18px;
+            height: 2rem;
+            margin-top: 1rem;
+            } button{
+            background-color: #27AE60;
+            border: 0;
+            height: 2rem;
+            width: 2rem;
+            margin-top: 1rem;
+        }
+    } 
+} 

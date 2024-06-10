@@ -1,3 +1,4 @@
+
 export const ProductCard = ({ product }) => {
     return(
         <li>
@@ -5,7 +6,7 @@ export const ProductCard = ({ product }) => {
             <div>
                 <h3>{product.name}</h3>
                 <span>{product.category}</span>
-                <span>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
+                <p>{product.price.toLocaleString('pt-BR', {  style: "currency", currency: "BRL"})}</p>
                 <button>Adicionar</button>
             </div>
         </li>
