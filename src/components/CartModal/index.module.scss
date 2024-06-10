@@ -1,9 +1,15 @@
 .divContainer{
-    width: 30.25rem;
-    height: 25.5rem;
+    width: 100%;
+    height: 100vh;
     position: fixed;
-    top: 265px;
-    left: 700px;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: rgba(0,0,0,.3);
     & > .div1{
         display: flex;
         flex-direction: row;
@@ -26,4 +32,91 @@
             margin-top: 1rem;
         }
     } 
+    .div2{
+        width: 30.25rem;
+        min-height: 8rem;
+        & > ul{
+            display: flex;
+            min-height: 7rem;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: #ffffff;
+            border: 0;
+            margin: 0;
+            li{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between  ;
+                width: 439.31px;
+                background-color: white;
+                height: 5.3rem;
+                border: 0;
+                margin: auto;
+                text-align: center;
+                & > div{
+                    display: flex;
+                    width: 13rem;
+                    height: 5.3rem;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                     h3 {
+                    color: #333333;
+                    font-weight: bold;
+                    margin: 0;
+                    height: 18px;
+                    size: 18px;
+                } span{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #27AE60;
+                    margin: 0;
+                    height: 14px;
+                } button{
+                    color: #BDBDBD;
+                    font-weight: 900;
+                    line-height: 20.7px;
+                    background-color: white;
+                    border: 0;
+                } img{
+                    height: 53.49px;
+                    width: 50px;
+                    padding: 15px 15px 15px 15px;
+                    border-radius: 5px;
+                    background-color: #F5F5F5;
+                    
+                }
+            }
+        } 
+}
+.div3{
+    width: 484px;
+    height: 121px;
+    background-color: white;
+    button{
+        width: 439.31px;
+        height: 60px;
+        font-weight: 600;
+        margin-left: 1.2rem;
+        color: #FFFFFF;
+        background-color: #BDBDBD;
+        border-radius: 8px;
+        border: 1px solid #BDBDBD;
+
+    }
+    & > div{
+        display: flex;
+        justify-content: space-between;
+        height: 2rem;
+        margin: auto;
+        width: 439.31px;
+        span{
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
 } 
+}
+

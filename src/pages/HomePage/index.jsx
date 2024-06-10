@@ -8,7 +8,10 @@ import { api } from "../../data/api";
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [isOpen, setIsOpen] = useState(false)
-   const [cartList, setCartList] = useState([]);
+   const [cartList, setCartList] = useState(
+      JSON.parse(localStorage.getItem("@CARRINHO")) || []
+    ); 
+
    
 
    useEffect(() => {
@@ -20,15 +23,38 @@ export const HomePage = () => {
       getProduct()
    },[])
 
-   const setOpen = () =>{
-      !setIsOpen ? setIsOpen(false) : setIsOpen(true)
-   }
+   useEffect(() =>{
+      {cartList.length < 1 ? <p>carrinho vazio</p> :
+         localStorage.setItem("@CARRINHO", JSON.stringify(cartList))
+         console.log(cartList)
+      }
+   },[cartList])
 
+   useEffect(() => {
+      return () => {
+        localStorage.removeItem("@CARRINHO"); 
+      };
+    }, [cartList]);
+
+   const addToCart = (product) => {
+      const productExists = cartList.some((item) => item.id === product.id);
+    
+      if (!productExists) {
+        setCartList([...cartList, product]);
+      } else {
+        alert("Produto já adicionado"); 
+      }
+    };
+
+   const removeFromCart = (product) => {
+      setCartList(cartList.filter((cartItem) => cartItem.id !== product.id));
+    };
+
+
+    const setOpen = (turnopen) =>{
+      setIsOpen(turnopen)
+    }
    
-
-
-
-
    // useEffect montagem - carrega os produtos da API e joga em productList
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
    // adição, exclusão, e exclusão geral do carrinho
@@ -40,8 +66,8 @@ export const HomePage = () => {
       <>
          <Header setIsOpen={setOpen} />
          <main className={styles.main} >
-            <ProductList productList={productList} />
-            {!isOpen ? null : <CartModal setIsOpen={isOpen} cartList={cartList} />}
+            <ProductList removeFromCart={removeFromCart} addToCart = {addToCart} productList={productList} />
+            {isOpen === true? <CartModal removeFromCart = {removeFromCart} isOpen={setOpen} cartList={cartList}/> : <p>""</p> }
          </main>
       </>
    );

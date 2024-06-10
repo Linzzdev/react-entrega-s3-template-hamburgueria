@@ -10,7 +10,7 @@ export const Header = ({setIsOpen}) => {
       <header className={styles.header}>
          <div>
          <img src={Logo} alt="Logo Kenzie Burguer" />
-            <button onClick={setIsOpen} >
+            <button onClick={() => setIsOpen(true)} >
                 <MdShoppingCart color="#BDBDBD" fontWeight="900" size="26"   />
                 <span>0</span>
             </button>
