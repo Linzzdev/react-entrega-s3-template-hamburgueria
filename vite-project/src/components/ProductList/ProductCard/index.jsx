@@ -1,7 +1,8 @@
+import styles from '../index.module.scss'
 
 export const ProductCard = ({ product, addToCart }) => {
     return(
-        <li>
+        <li style={styles.li} >
             <img src={product.img} alt={product.name} />
             <div>
                 <h3>{product.name}</h3>
