@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 import { useEffect, useRef } from "react";
 
 
-export const CartModal = ({ cartList , isOpen, removeFromCart }) => {
+export const CartModal = ({ cartList , isOpen, removeFromCart, removeAll }) => {
 
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
@@ -34,6 +34,7 @@ export const CartModal = ({ cartList , isOpen, removeFromCart }) => {
    },[])
 
 
+
    return (
       <div className={styles.divContainer} role="dialog">
          <div ref={modalRef} className={styles.div1} >
@@ -54,8 +55,8 @@ export const CartModal = ({ cartList , isOpen, removeFromCart }) => {
                <span>Total</span>
                <span color="#828282"> {total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
             </div>
-            <button>Remover todos</button>
-         </div>
+            <button onClick={removeAll}>Remover todos</button>
+         </div> 
       </div>
    );
 };

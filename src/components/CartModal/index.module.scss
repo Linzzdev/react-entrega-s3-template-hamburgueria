@@ -14,17 +14,19 @@
         display: flex;
         flex-direction: row;
         width: 30.25rem;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 3.563rem;
         background-color: #27AE60;
         border-radius: 8px 8px 0px 0px;
         & > h2{
             color: #FFFFFF;
+            padding-left: 1.5rem;
             font-weight: bold;
             font-size: 18px;
             height: 2rem;
             margin-top: 1rem;
             } button{
+                padding-right: 3rem;
             background-color: #27AE60;
             border: 0;
             height: 2rem;
@@ -107,11 +109,14 @@
 
     }
     & > div{
+        padding-top: 1rem;
         display: flex;
         justify-content: space-between;
         height: 2rem;
         margin: auto;
         width: 439.31px;
+        border-top: 2px solid #E0E0E0 ;
+
         span{
             font-size: 14px;
             font-weight: 600;

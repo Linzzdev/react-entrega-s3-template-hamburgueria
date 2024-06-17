@@ -24,7 +24,7 @@ export const HomePage = () => {
    },[])
 
    useEffect(() =>{
-      {cartList.length < 1 ? <p>carrinho vazio</p> :
+      {cartList.length < 1 ? (setIsOpen(false)) :
          localStorage.setItem("@CARRINHO", JSON.stringify(cartList))
          console.log(cartList)
       }
@@ -50,9 +50,15 @@ export const HomePage = () => {
       setCartList(cartList.filter((cartItem) => cartItem.id !== product.id));
     };
 
+    const removeAll = () => {
+      localStorage.removeItem("@CARRINHO");
+      setIsOpen(false)
+      setCartList([]); 
+    };
+
 
     const setOpen = (turnopen) =>{
-      setIsOpen(turnopen)
+      {cartList < 1 ? alert("Carrinho vazio!") : setIsOpen(turnopen) }
     }
    
    // useEffect montagem - carrega os produtos da API e joga em productList
@@ -67,7 +73,7 @@ export const HomePage = () => {
          <Header setIsOpen={setOpen} />
          <main className={styles.main} >
             <ProductList removeFromCart={removeFromCart} addToCart = {addToCart} productList={productList} />
-            {isOpen === true? <CartModal removeFromCart = {removeFromCart} isOpen={setOpen} cartList={cartList}/> : <p>""</p> }
+            {isOpen === true? <CartModal removeAll={removeAll}   removeFromCart = {removeFromCart} isOpen={setOpen} cartList={cartList}/> : <p>""</p> }
          </main>
       </>
    );
