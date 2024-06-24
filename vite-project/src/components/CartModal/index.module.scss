@@ -125,3 +125,29 @@
 } 
 }
 
+@media screen and (max-width: 600px) {
+    .divContainer{
+        width: 100%;
+        & > .div1{
+            width: 391px;
+        } .div2{
+            width: 391px;
+            & > ul{
+                width: 391px;
+                li{
+                    width: 391px;
+                }
+            }
+        } .div3{
+            width: 391px;
+            button{
+                margin: 0;
+                width: 391px;
+            }
+            & > .div4{
+                width: 391px;
+            }
+        }
+    }
+}
+

@@ -52,3 +52,10 @@ li:hover{
         border: #27AE60;
     }
 }
+
+@media screen and (max-width: 600px) {
+    ul{
+        justify-content: center;
+        width: 100%;
+    }
+}

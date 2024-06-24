@@ -73,7 +73,7 @@ export const HomePage = () => {
          <Header setIsOpen={setOpen} />
          <main className={styles.main} >
             <ProductList removeFromCart={removeFromCart} addToCart = {addToCart} productList={productList} />
-            {isOpen === true? <CartModal removeAll={removeAll}   removeFromCart = {removeFromCart} isOpen={setOpen} cartList={cartList}/> : <p>""</p> }
+            {isOpen === true? <CartModal removeAll={removeAll}   removeFromCart = {removeFromCart} isOpen={setOpen} cartList={cartList}/> : <p></p> }
          </main>
       </>
    );

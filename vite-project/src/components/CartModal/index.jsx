@@ -51,7 +51,7 @@ export const CartModal = ({ cartList , isOpen, removeFromCart, removeAll }) => {
             </ul>
          </div>
          <div className={styles.div3}>
-            <div className={styles.div3} >
+            <div className={styles.div4} >
                <span>Total</span>
                <span color="#828282"> {total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
             </div>

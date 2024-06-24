@@ -36,3 +36,13 @@ header{
         padding: 0;
     }
 }
+
+
+@media screen and (max-width: 600px) {
+    header{
+        width: 100%;
+        & > div{
+            width: 80%;
+        } 
+    } 
+}
